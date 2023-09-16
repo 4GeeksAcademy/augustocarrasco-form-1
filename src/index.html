@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2ffe6c80c8.js" crossorigin="anonymous"></script>
+    <title>Form1</title>
+</head>
+
+<body
+    class="antialiased flex flex-col justify-center items-center content-center bg-gradient-to-br from-sky-900 via-teal-500 to-teal-900 h-screen w-full ">
+    <div class="flex justify-center items-center flex-col  w-fit h-fit rounded ">
+
+        <div class="flex flex-col p-4 bg-gray-600/25 shadow-2xl rounded-2xl">
+            <form action="index2.html" method="post"
+                class="flex flex-col items-center justify-center w-full text-teal-200 font-semibold ">
+                <div class="flex items-end justify-start w-full rounded-t-lg bg-gray-600/50 h-1/6 p-2">
+                    <h1 class="text-teal-50 text-2xl font-bold">
+                        Payment for example
+                    </h1>
+                </div>
+                <div class=" bg-teal-200 text-teal-600 border border-teal-500 rounded p-2 w-full m-2 ">Some fields are
+                    missing</div>
+                <div class="flex flex-row justify-between content-between w-full p-2 ">
+                    <p class="flex flex-col w-2/5 m-2">Card #<input
+                            class="rounded bg-teal-50 text-teal-900"
+                            type="number" name="Card" id="cardnumer" requiered placeholder="XXXXXXXXXXXXXXXXX"
+                            minlength="16" maxlength="16"></p>
+                    <p class="flex flex-col w-1/5 m-2">CVC #<input class="rounded bg-teal-50 text-teal-900" type="number" name="CVC"
+                            id="cardcvc" requiered placeholder="0000" minlength="3" maxlength="4"></p>
+                    <div class="flex flex-col w-1/5 m-2">
+                        <p class="w-full">Ammount</p>
+                        <div class="flex flex-row">
+                            <span>$&nbsp;</span>
+                            <input class="w-full rounded bg-teal-50 text-teal-900" type="number" name="ammoun" id="ammount" requiered
+                                placeholder="Amount" pattern="\[0-9]*,[0-9]{2}">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-row justify-between content-between p-2 w-full ">
+                    <p class="flex flex-col w-1/2 m-2 ">First Name <input class="rounded bg-teal-50 text-teal-900" type="text"
+                            name="firstname" id="firstname" requiered> </p>
+                    <p class="flex flex-col w-1/2 m-2 ">Last Name<input class="rounded bg-teal-50 text-teal-900" type="text"
+                            name="lastname" id="lastname" requiered> </p>
+                </div>
+                <div class="flex flex-row justify-between content-between p-2 w-full">
+                    <p class="flex flex-col w-1/2 m-2 ">City <input class="rounded bg-teal-50 text-teal-900" type="text" name="city"
+                            id="city" requiered> </p>
+                    <p class="flex flex-col w-1/4 m-2 ">State
+                        <select class="rounded  bg-teal-50 text-teal-900" name="state" id="state">
+                            <option value="" disabled selected hidden>Pick a state</option>
+                            <option value="cam">Comunidad de Madrid</option>
+                            <option value="clm">Castilla La Mancha</option>
+                            <option value="pv">País Vasco</option>
+                            <option value="gal">Galicia</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </p>
+                    <p class="flex flex-col w-1/4 m-2 ">Post Code<input class="rounded bg-teal-50 text-teal-900" type="number"
+                            name="postcode" id="postcode"></p>
+                </div>
+                <div class="flex flex-row justify-between content-between p-2 w-full ">
+                    <!-- Card type selector -->
+                    <div class="flex flex-col justify-start content-between w-2/4 m-2">
+                        <p>We accept:</p>
+                        <div class="flex flex-row bg-gray-400 rounded w-fit p-2">
+                            <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe" id="MasterCard"><i
+                                    class="fa-brands fa-cc-mastercard ml-1"></i></p>
+                            <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe" id="Visa"><i
+                                    class="fa-brands fa-cc-visa ml-1"></i></p>
+                            <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe" id="CCDiner"><i
+                                    class="fa-brands fa-cc-diners-club ml-1"></i></p>
+                            <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe" id="AmericanExpress"><i
+                                    class="fa-brands fa-cc-amex ml-1"></i></p>
+                            <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe" id="ApplePay"><i
+                                    class="fa-brands fa-cc-apple-pay ml-1"></i></p>
+                        </div>
+                    </div>
+                    <!-- Message -->
+                    <div class="flex flex-col w-2/4">
+                        <p class="ml-2">Message</p>
+                        <textarea class="rounded border border-teal-800 text-sm font-light m-2 mb-0 bg-teal-50 text-teal-900"
+                            name="Message" id="Message" cols="50" rows="4"></textarea>
+                        <span class="text-xs text-gray-900 font-light mr-2 self-end">Add any notes here.</span>
+                    </div>
+                </div>
+                <div class="flex flex-row  justify-end w-full px-5 bg-gray-600/50 rounded-b-lg">
+                    <button
+                        class="rounded bg-gray-500 text-white p-1 m-2 hover:transition ease-in-out delay-150  focus:bg-gray-900  focus:transition   hover:bg-gray-900 duration-75"
+                        type="button">Cancel</button>
+                    <button
+                        class="rounded bg-teal-400 text-teal-950 p-1 m-2 hover:transition ease-in-out delay-150 hover:scale-125 focus:scale-125 hover:bg-teal-500 focus:bg-teal-500  duration-300"
+                        type="button" id="submit"><a href="index2.html">Send</a></button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
