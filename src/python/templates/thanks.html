@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='dist/output.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2ffe6c80c8.js" crossorigin="anonymous"></script>
     <title>Form1</title>
 </head>
@@ -13,14 +13,14 @@
     class="antialiased flex flex-col justify-center items-center content-center bg-gradient-to-br from-sky-900 via-teal-500 to-teal-900 h-screen w-full ">
     <div class=" transition ease-in-out duration-300 flex justify-between items-center content-between flex-col  w-fit h-fit rounded shadow-2xl bg-gradient-to-r from-teal-500 to-teal-900 p-5 text-white animate-bounce">
 
-        Submission complete. Thank you!  
+        Submission complete. Thank you, {{firstname}} {{lastname}}, for your ${{cont}} contribution!
         
     </div>
     <div class="relative">    
     <button
         class="rounded bg-teal-600 text-white p-1 m-2 mt-5 hover:transition ease-in-out delay-150 hover:scale-125 focus:scale-125 hover:bg-teal-500 focus:bg-teal-500  duration-300"
-        type="button" id="submit">
-        <a href="index.html">Back</a>
+        type="button" id="back">
+        <a href="/home">Home</a>
     </button>
     </div>
 </body>

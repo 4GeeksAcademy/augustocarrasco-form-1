@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='dist/output.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2ffe6c80c8.js" crossorigin="anonymous"></script>
     <title>Form1</title>
 </head>
@@ -14,7 +14,7 @@
     <div class="flex justify-center items-center flex-col  w-fit h-fit rounded ">
 
         <div class="flex flex-col p-4 bg-gray-600/25 shadow-2xl rounded-2xl">
-            <form action="index2.html" method="post"
+            <form action="/login" method="post"
                 class="flex flex-col items-center justify-center w-full text-teal-200 font-semibold ">
                 <div class="flex items-end justify-start w-full rounded-t-lg bg-gray-600/50 h-1/6 p-2">
                     <h1 class="text-teal-50 text-2xl font-bold">
@@ -26,38 +26,38 @@
                 <div class="flex flex-row justify-between content-between w-full p-2 ">
                     <div class="flex flex-row w-1/2">
                         <p class="flex flex-col w-3/4 m-2">Card #
-                            <input class="rounded bg-teal-50 text-teal-900" type="number" name="Card" id="cardnumer"
-                                requiered placeholder="XXXXXXXXXXXXXXXXX" minlength="16" maxlength="16">
+                            <input class="rounded bg-teal-50 text-teal-900" type="text" name="Card" id="cardnumer"
+                                required placeholder="XXXXXXXXXXXXXXXXX" pattern="\d{16,16}" title="Card number (16 digits)">
                         </p>
                     </div>
                     <div class="flex flex-row w-1/2 ">
                     <p class="flex flex-col w-1/2 m-2">CVC #<input class="rounded bg-teal-50 text-teal-900"
-                            type="number" name="CVC" id="cardcvc" requiered placeholder="0000" minlength="3"
+                            type="number" name="CVC" id="cardcvc" required placeholder="0000" minlength="3"
                             maxlength="4"></p>
                     <div class="flex flex-col w-1/2 m-2">
                         <p class="w-full">Ammount</p>
                         <div class="flex flex-row">
                             <span>$&nbsp;</span>
-                            <input class="w-full rounded bg-teal-50 text-teal-900" type="number" name="ammoun"
-                                id="ammount" requiered placeholder="Amount" pattern="\[0-9]*,[0-9]{2}">
+                            <input class="w-full rounded bg-teal-50 text-teal-900" type="text" name="ammount"
+                                id="ammount" required placeholder="Amount" pattern="\d*,\d{2,2}" title="Example: 10,00">
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="flex flex-row justify-between content-between p-2 w-full ">
                     <p class="flex flex-col w-1/2 m-2 ">First Name <input class="rounded bg-teal-50 text-teal-900"
-                            type="text" name="firstname" id="firstname" requiered> </p>
+                            type="text" name="firstname" id="firstname" required> </p>
                     <p class="flex flex-col w-1/2 m-2 ">Last Name<input class="rounded bg-teal-50 text-teal-900"
-                            type="text" name="lastname" id="lastname" requiered> </p>
+                            type="text" name="lastname" id="lastname" required> </p>
                 </div>
                 <div class="flex flex-row justify-between content-between p-2 w-full">
                     <div class="flex flex-row w-1/2 ">
                         <p class="flex flex-col w-full m-2 ">City <input class=" mr-2 rounded bg-teal-50 text-teal-900" type="text"
-                                name="city" id="city" requiered> </p>
+                                name="city" id="city" required> </p>
                     </div>
                     <div class="flex flex-row w-1/2 ">
                         <p class="flex flex-col w-1/2 m-2 ml-0">State
-                            <select class="rounded  bg-teal-50 text-teal-900" name="state" id="state">
+                            <select class="rounded  bg-teal-50 text-teal-900" name="state" id="state" required>
                                 <option value="" disabled selected hidden>Pick a state</option>
                                 <option value="cam">Comunidad de Madrid</option>
                                 <option value="clm">Castilla La Mancha</option>
@@ -68,7 +68,7 @@
                         </p>
                         <p class="flex flex-col w-1/2 m-2 ">Post Code
                             <input class=" w-full rounded bg-teal-50 text-teal-900"
-                                type="number" name="postcode" id="postcode"></p>
+                                type="number" name="postcode" id="postcode" required></p>
                     </div>
                 </div>
                 <div class="flex flex-row justify-between content-between p-2 w-full ">
@@ -77,15 +77,15 @@
                         <p>We accept:</p>
                         <div class="flex flex-row bg-gray-400 rounded w-fit p-2">
                             <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe"
-                                    id="MasterCard"><i class="fa-brands fa-cc-mastercard ml-1"></i></p>
-                            <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe" id="Visa"><i
+                                    id="MasterCard" required><i class="fa-brands fa-cc-mastercard ml-1"></i></p>
+                            <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe" id="Visa"  required><i
                                     class="fa-brands fa-cc-visa ml-1"></i></p>
                             <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe"
-                                    id="CCDiner"><i class="fa-brands fa-cc-diners-club ml-1"></i></p>
+                                    id="CCDiner"  required><i class="fa-brands fa-cc-diners-club ml-1"></i></p>
                             <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe"
-                                    id="AmericanExpress"><i class="fa-brands fa-cc-amex ml-1"></i></p>
+                                    id="AmericanExpress"  required><i class="fa-brands fa-cc-amex ml-1"></i></p>
                             <p class="flex flex-row m-1 text-teal-900"><input type="radio" name="cardtipe"
-                                    id="ApplePay"><i class="fa-brands fa-cc-apple-pay ml-1"></i></p>
+                                    id="ApplePay"  required><i class="fa-brands fa-cc-apple-pay ml-1"></i></p>
                         </div>
                     </div>
                     <!-- Message -->
@@ -100,10 +100,10 @@
                 <div class="flex flex-row  justify-end w-full px-5 bg-gray-600/50 rounded-b-lg">
                     <button
                         class="rounded bg-gray-500 text-white p-1 m-2 hover:transition ease-in-out delay-150  focus:bg-gray-900  focus:transition   hover:bg-gray-900 duration-75"
-                        type="button">Cancel</button>
+                        type="button"><a href="/home">Back</a></button>
                     <button
                         class="rounded bg-teal-400 text-teal-950 p-1 m-2 hover:transition ease-in-out delay-150 hover:scale-125 focus:scale-125 hover:bg-teal-500 focus:bg-teal-500  duration-300"
-                        type="button" id="submit"><a href="index2.html">Send</a></button>
+                        type="submit" id="submit">Send</button>
                 </div>
             </form>
         </div>

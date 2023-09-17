@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["/workspaces/augustocarrasco-form-1/src/**/*.{html,js}"], 
   theme: {
     extend: {},
   },
